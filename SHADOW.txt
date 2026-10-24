@@ -1,0 +1,13 @@
+shadow prebuilt repo: prebuilts_target_brotli (target)
+  upstream: external/brotli
+  api-level: 32 payload (branch 34-20261024)
+  blobs: org.blisslabs.ag.brotli.apex + org.blisslabs.ag.brotli.dev.apex @ 14000001 (extracted; blobs deleted, not tracked)
+  layout: flattened root (payload contents at repo root)
+  modules: libbrotlicommon libbrotlidec libbrotlienc brotli 
+  notes: version 14000001 preferred over 1.2.0-1 (newer publish 2026-10-08, same module
+    coverage minus versioned .so.1 symlink clutter). Source module libbrotli
+    (cc_library_static) has no payload artifact - payload ships split shared libs
+    libbrotlicommon/libbrotlidec/libbrotlienc; zero in-tree Android.bp dependers.
+    COVERAGE GAPS: libbrotli_encoder_jni (JNI shared lib) and brotli-java (jar)
+    absent from payload - not faked.
+  date: 2026-10-24
